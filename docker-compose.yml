@@ -1,0 +1,13 @@
+services:
+  my-web-service:
+    build:
+      context: ./my-web-service
+      dockerfile: Dockerfile
+  ngrok-quick:
+    image: ghcr.io/felix-zenk/ngrok-quick:latest
+    container_name: ngrok-quick
+    environment:
+      NGROK_AUTHTOKEN: your-auth-token
+      NGROK_DOMAIN: your-ngrok-domain  # optional a custom ngrok domain you own
+      FORWARD_ADDR: my-web-service:80
+    restart: unless-stopped
