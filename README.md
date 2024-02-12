@@ -30,5 +30,8 @@ This includes `127.0.0.1`, `localhost:1234`, `http://localhost`, `https://localh
 
 If `NGROK_DOMAIN` is not set, ngrok will use a random subdomain of `ngrok-free.app`.
 
-Run `docker-compose up -d` and your local server will be exposed via ngrok. \
-To get the public URL look at the logs of the container with `docker-compose logs ngrok-quick`
+Run `docker compose up -d` and your local server will be exposed via ngrok. \
+To get the public URL look at the logs of the container with `docker compose logs ngrok-quick`
+
+> When using a free ngrok account you will be limited to
+> 1 concurrent endpoint and 1 GB of traffic / 10000 requests per month.
